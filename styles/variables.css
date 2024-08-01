@@ -2,3 +2,55 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --padding: 10px;
+  --main-font: 'IBM Plex mono';
+  --main-font-size: 18px;
+  --main-font-weight: 700;
+  --main-line-height: 130%;
+
+  --header-font-size: 116px;
+  --header-corner-width: 25px;
+
+  --bg-image: url(/images/cover-image-dark.png);
+  --bg-color: #000028;
+  --text-color: #F1B2CE;
+  --accent-color: #FF0070;
+  --title-accent-color: #000028;
+  --header-color: #DB00FF;
+  --theme-switcher-button-hover: rgba(255, 0, 112, 0.4);
+
+  --shadow-color: var(--accent-color);
+  --decor-bg-color: var(--accent-color);
+  --decor-text-color: var(--bg-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000028;
+    --text-color: #F1B2CE;
+    --accent-color: #FF0070;
+    --title-accent-color: #000028;
+    --header-color: #DB00FF;
+    --theme-switcher-button-hover: rgba(255, 0, 112, 0.4);
+
+    --shadow-color: var(--accent-color);
+    --decor-bg-color: var(--accent-color);
+    --decor-text-color: var(--bg-color);
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #FFF1F7;
+    --text-color: #353430;
+    --accent-color: var(--accent-color);
+    --header-color: #FFC2E6;
+    --theme-switcher-button-hover: rgba(50, 49, 45, 0.40);
+
+    --shadow-color: var(--accent-color);
+    --decor-bg-color: #ff8dcb;
+    --decor-text-color: var(--text-color);
+  }
+}

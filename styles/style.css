@@ -1,5 +1,327 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  color: var(--text-color, #F1B2CE);
+
+  font-family: var(--main-font, sans-serif);
+  font-size: var(--main-font-size, 18px);
+  font-weight: var(--main-font-weight, 400);
+  line-height: var(--main-line-height, 130%);
+  font-style: normal;
+
+  background: fixed var(--bg-color, #000028) var(--bg-image) no-repeat center / cover;
+
+  display: grid;
+  gap: 30px;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px var(--shadow-color, #FF0070);
+}
+
+.link:hover {
+  border-block-end: 1px solid var(--text-color, #F1B2CE);
+}
+
+.link:focus-visible {
+  text-decoration-line: none;
+  outline: 1px solid var(--text-color, #F1B2CE);
+}
+
+.title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  color: var(--header-color, #DB00FF);
+}
+
+.title-decor {
+  color: var(--decor-text-color, #000028);
+  background: var(--decor-bg-color, #FF0070);
+  font-size: var(--main-font-size, 18px);
+}
+
+.corner-frames {
+  position: relative;
+}
+
+.corner-frames::before,
+.corner-frames::after {
+  content: "";
+  position: absolute;
+  display: block;
+  block-size: var(--header-corner-width, 25px);
+  inline-size: var(--header-corner-width, 25px);
+}
+
+.corner-frames::before {
+  border-top: 2px solid var(--accent-color, #FF0070);
+  border-right: 2px solid var(--accent-color, #FF0070);
+  inset-block-start: 0;
+  inset-inline-end: 0;
+}
+
+.corner-frames::after {
+  border-bottom: 2px solid var(--accent-color, #FF0070);
+  border-left: 2px solid var(--accent-color, #FF0070);
+  inset-block-end: 0;
+  inset-inline-start: 0;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.header__lamp {
+  position: absolute;
+  display: flex;
+  justify-self: end;
+  gap: 10px;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.header__lamp::after {
+  content: '';
+  align-self: center;
+  background-color: var(--accent-color, #FF0070);
+  box-shadow: 0px 0px 4px 2px var(--accent-color, #FF0070);
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  margin-inline-end: 9px;
+}
+
+.heading {
+  text-shadow: 4px 4px 0 var(--shadow-color, #FF0070);
+  justify-self: flex-start;
+  grid-column: span 2;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+  grid-column: span 2;
+}
+
+.header__theme-menu-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+  color: var(--accent-color, #FF0070);
+  min-inline-size: 70px;
+}
+
+.header__theme-menu-button {
+  color: var(--accent-color, #FF0070);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+
+  text-transform: lowercase;
+}
+
+.header__theme-menu-button:disabled {
+  pointer-events: none;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color, #FF0070);
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--theme-switcher-button-hover, rgba(255, 0, 112, 0.4));
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--accent-color, #FF0070);
+}
+
+.header__paragraph {
+  justify-self: flex-end;
+  align-self: center;
+  grid-column: span 2;
+}
+
+.content {
+  padding: var(--padding, 10px);
+  display: grid;
+  gap: 50px;
+}
+
+.content__section {
+  display: grid;
+  gap: 20px;
+}
+
+.content__section-title {
+  color: var(--accent-color, #FF0070);
+  font-size: var(--main-font-size, 18px);
+}
+
+.content__section-item {
+  display: grid;
+  gap: 10px;
+}
+
+.content__section-item__paragraph {
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.content__section-gallery {
+  gap: 10px;
+}
+
+.content__section-gallery__container {
+  display: grid;
+  gap: 10px;
+}
+
+.content__section-gallery__img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.img_1 {
+  grid-area: img_1;
+}
+
+.img_2 {
+  grid-area: img_2;
+}
+
+.img_3 {
+  grid-area: img_3;
+}
+
+.img_4 {
+  grid-area: img_4;
+}
+
+.img_5 {
+  grid-area: img_5;
+}
+
+.footer {
+  display: grid;
+}
+
+.footer-title {
+  text-shadow: 2px 2px 0px var(--accent-color, #FF0070);
+  justify-self: center;
+  align-self: center;
+}
+
+@media (375px <=width <768px) {
+  .corner-frames {
+    block-size: 649px;
+  }
+
+  .content__section-gallery__container {
+    inline-size: 355px;
+  }
+
+  .title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+}
+
+@media (768px <=width) {
+  .corner-frames {
+    block-size: 1024px;
+  }
+
+  .title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
+  }
+
+  .header__paragraph {
+    grid-column-start: 2;
+  }
+
+  .content {
+    gap: 60px;
+  }
+
+  .content__section {
+    padding-block-start: 20px;
+  }
+
+  .content__section:not(:last-child) {
+    grid-template-columns: 236px auto;
+  }
+
+  .content__section:nth-child(2n + 1) article:nth-of-type(n + 1) {
+    grid-column-start: 2;
+  }
+
+  .content__section:nth-child(3) .content__section-title {
+    grid-row: span 2;
+  }
+
+  .content__section:last-child {
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .content__section-gallery__container {
+    padding-block-start: 10px;
+    inline-size: 100%;
+    grid-template-columns: repeat(3, auto);
+    gap: 20px;
+    grid-template-areas:
+      'img_1 img_1 img_2'
+      'img_3 img_4 img_2'
+      'img_3 img_5 img_5';
+  }
+}
+
+
+@media (1024px <=width) {
+  .corner-frames {
+    block-size: 768px;
+  }
+
+  .header__paragraph {
+    grid-column-start: 2;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-block: 0;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .content__section:not(:last-child) {
+    grid-template-columns: 315px auto;
+  }
+
+  .content__section:nth-child(2) .content__section-title {
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+
+  .content__section:nth-child(2) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content__section:nth-child(2) article {
+    grid-row-start: 2;
+    grid-template-rows: 23px auto;
+  }
 }
