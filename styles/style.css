@@ -164,6 +164,8 @@
 .content__section-title {
   color: var(--accent-color, #FF0070);
   font-size: var(--main-font-size, 18px);
+
+  grid-area: title;
 }
 
 .content__section-item {
@@ -210,10 +212,6 @@
   grid-area: img_5;
 }
 
-.content__section-title {
-  grid-area: title;
-}
-
 .article_container {
   display: grid;
   gap: 20px;
@@ -248,9 +246,6 @@
 
   .content__section-gallery__container {
     inline-size: 355px;
-  }
-
-  .content__section-gallery__container {
     grid-template-areas:
       'img_1'
       'img_2'
