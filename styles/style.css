@@ -229,7 +229,7 @@
 }
 
 .footer-title {
-  text-shadow: 2px 2px 0px var(--accent-color, #FF0070);
+  text-shadow: 2px 2px 0px var(--shadow-color, #FF0070);
   justify-self: center;
   align-self: center;
 
